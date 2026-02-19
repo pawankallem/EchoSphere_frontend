@@ -58,7 +58,6 @@ const CreateAccount = () => {
 
         if (Object.keys(validationErrors).length > 0) return;
 
-        console.log("User Data:", form);
         dispatch(register(form)).then((res) => {
             if (res.meta.requestStatus === "fulfilled") {
                 navigate("/login");

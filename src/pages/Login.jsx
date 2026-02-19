@@ -44,7 +44,6 @@ const Login = () => {
 
         if (Object.keys(validationErrors).length > 0) return;
 
-        console.log("Login Data:", form);
         dispatch(login(form));
 
         toast.success("Logged in successfully 🎉");
