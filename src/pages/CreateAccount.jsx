@@ -1,7 +1,15 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { register } from "../features/auth/authSlice";
 
 const CreateAccount = () => {
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    const { loading, error } = useSelector(state => state.auth)
+
     const [form, setForm] = useState({
         fullname: "",
         username: "",
@@ -51,6 +59,11 @@ const CreateAccount = () => {
         if (Object.keys(validationErrors).length > 0) return;
 
         console.log("User Data:", form);
+        dispatch(register(form)).then((res) => {
+            if (res.meta.requestStatus === "fulfilled") {
+                navigate("/login");
+            }
+        });
 
         toast.success("User account created 🎉");
 
@@ -165,7 +178,7 @@ const CreateAccount = () => {
                     </form>
 
                     <p className="text-sm text-gray-500 text-center mt-6">
-                        Already have an account? Login
+                        Already have an account? <Link to="/login"> Login</Link>
                     </p>
                 </div>
             </div>

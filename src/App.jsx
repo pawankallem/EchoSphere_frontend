@@ -1,10 +1,11 @@
 import { Toaster } from 'react-hot-toast'
 import './App.css'
-import CreateAccount from './pages/CreateAccount'
-import Login from './pages/Login'
 import { useSelector } from "react-redux";
-import FeedPage from "./pages/FeedPage";
 import { useEffect } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import CreateAccount from './pages/CreateAccount'
+import Login from './pages/Login';
+import FeedPage from "./pages/FeedPage";
 
 function App() {
   const darkMode = useSelector((state) => state.theme.darkMode);
@@ -23,10 +24,13 @@ function App() {
 
     <div className={darkMode ? "dark" : ""}>
       <Toaster position="top-right" />
-      <FeedPage />
-
-      {/* <CreateAccount /> */}
-      {/* <Login /> */}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<FeedPage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<CreateAccount />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   )
 }

@@ -1,7 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { login } from "../features/auth/authSlice";
 
 const Login = () => {
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const { loading, error, user } = useSelector((state) => state.auth);
+
     const [form, setForm] = useState({
         email: "",
         password: "",
@@ -36,6 +45,7 @@ const Login = () => {
         if (Object.keys(validationErrors).length > 0) return;
 
         console.log("Login Data:", form);
+        dispatch(login(form));
 
         toast.success("Logged in successfully 🎉");
 
@@ -46,6 +56,12 @@ const Login = () => {
 
         setErrors({});
     };
+
+    useEffect(() => {
+        if (user) {
+            navigate("/");
+        }
+    }, [user, navigate]);
 
     return (
         <div className="min-h-screen flex">
@@ -116,7 +132,7 @@ const Login = () => {
                     </form>
 
                     <p className="text-sm text-gray-500 text-center mt-6">
-                        Don’t have an account? Sign up
+                        Don’t have an account? <Link to="/register"> Sign up</Link>
                     </p>
                 </div>
             </div>
