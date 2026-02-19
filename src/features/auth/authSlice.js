@@ -88,6 +88,12 @@ const authSlice = createSlice({
 
       .addCase(fetchUser.fulfilled, (state, action) => {
         state.user = action.payload;
+      })
+
+      .addCase(fetchUser.rejected, (state) => {
+        state.user = null;
+        state.token = null;
+        localStorage.removeItem("token");
       });
   },
 });
