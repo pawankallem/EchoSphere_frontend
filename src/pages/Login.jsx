@@ -3,6 +3,7 @@ import toast from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { login } from "../features/auth/authSlice";
+import bg_1 from "../assets/back_2.jpeg";
 
 const Login = () => {
 
@@ -67,13 +68,10 @@ const Login = () => {
 
             <div
                 className="hidden md:flex w-1/2 bg-cover bg-center"
-                style={{
-                    backgroundImage:
-                        "url('https://images.unsplash.com/photo-1529336953121-adbc9cc1e6b6?q=80&w=1400')",
-                }}
+                style={{ backgroundImage: `url(${bg_1})` }}
             />
 
-            <div className="flex w-full md:w-1/2 items-center justify-center bg-gray-50 px-6">
+            <div className="flex w-full md:w-1/2 items-center justify-center bg-blue-100 px-6">
                 <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow-lg">
 
                     <h2 className="text-3xl font-bold text-gray-800 mb-2">
