@@ -134,6 +134,7 @@ npm run dev
 ```
 
 ---
-<br/>
-<br/>
+
+> 🚧 **Active Development**  
+> EchoSphere is continuously evolving. New features and improvements are currently in progress.
 
