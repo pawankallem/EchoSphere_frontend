@@ -33,6 +33,8 @@ A connected world where voices spread and conversations resonate.
 
 <!-- pending -->
 
+- notifications on like & comments
+
 - image upload for post or user creation or updates
 - load like, comments, saved updates realtime without refresh.
 - like & dislike && save & undo functionality implementation
@@ -45,12 +47,7 @@ A connected world where voices spread and conversations resonate.
 - show the icons of users who liked that specific post
 - post emoji icons highlight on actions
 - side bar for multiple options like [ home, search, create, notifications, profile, logout, dark mode, ]
-
-
-
-
-
-
+- set background image for login and create user account in mobile view.
 
 
 
