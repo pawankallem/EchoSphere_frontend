@@ -18,13 +18,6 @@ EchoSphere is a full-stack social media web app inspired by the core experiences
 - **Protected Routes** — Auth-guarded navigation with redirect logic
 
 ---
-
-## Demo Account
-
-Email: test@gmail.com  
-Password: Test@123
-
----
 <br/>
 
 ## Pages
@@ -65,12 +58,11 @@ Password: Test@123
 
 <br/><br/>
 
-
 ---
 
 ## Tech Stack
 
-### Frontend _(primary focus)_
+### Frontend 
 | Tool | Purpose |
 |---|---|
 | React 19 + Vite | UI & blazing-fast build tooling |
@@ -130,7 +122,7 @@ Key patterns used:
 
 ```bash
 # Clone & install
-git clone https://github.com/your-username/echosphere-frontend
+git clone https://github.com/pawankallem/EchoSphere_frontend.git
 cd echosphere-frontend
 npm install
 
@@ -142,5 +134,6 @@ npm run dev
 ```
 
 ---
+<br/>
 <br/>
 
