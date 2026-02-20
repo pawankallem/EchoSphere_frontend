@@ -15,7 +15,8 @@ export default function PostCard({ post }) {
         <img
           src={
             post.author?.avatar ||
-            `https://ui-avatars.com/api/?name=${post.author?.username}`
+            // `https://ui-avatars.com/api/?name=${post.author?.username}`
+            `https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png`
           }
           className="w-10 h-10 rounded-full"
         />
@@ -30,10 +31,13 @@ export default function PostCard({ post }) {
         </div>
       </div>
 
-      <img
-        src={post.image}
-        className="w-full object-cover max-h-[500px]"
-      />
+      <div className="bg-white">
+        <img
+          src={post.image}
+          className="w-full object-cover max-h-[500px]"
+        />
+      </div>
+
 
       <div className="p-4 space-y-3">
 

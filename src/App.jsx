@@ -10,6 +10,7 @@ import PublicRoute from './components/PublicRoute';
 import ProtectedRoute from './components/ProtectedRoute';
 import NotFound from './components/NotFound';
 import { fetchUser } from './features/auth/authSlice';
+import ProfilePage from "./pages/ProfilePage";
 
 function App() {
   const dispatch = useDispatch();
@@ -44,6 +45,15 @@ function App() {
               <PublicRoute>
                 <Login />
               </PublicRoute>
+            }
+          />
+
+          <Route
+            path="/profile"
+            element={
+              <ProtectedRoute>
+                <ProfilePage />
+              </ProtectedRoute>
             }
           />
 
