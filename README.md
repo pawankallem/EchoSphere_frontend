@@ -19,6 +19,55 @@ EchoSphere is a full-stack social media web app inspired by the core experiences
 
 ---
 
+## Demo Account
+
+Email: test@gmail.com  
+Password: Test@123
+
+---
+<br/>
+
+## Pages
+
+### Register
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/bd5ba0a5-c379-44bc-8767-fd19cab2303e" />
+
+<br/><br/><br/>
+
+### Login
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/935b75df-690a-45b1-9348-939cb0898334" />
+
+<br/><br/><br/>
+
+### Home/Feed page
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/43943841-2633-442b-84b1-81e9fb2d7f75" />
+
+<br/><br/><br/>
+
+### Create Post
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3244f212-bd9c-4406-b0f3-0bcc8b54cf0d" />
+
+<br/><br/><br/>
+
+### Profile
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/21a4b4a0-b078-4bbb-aacf-c23a8808ad61" />
+
+<br/><br/><br/>
+
+### Edit Profile
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/cdd54767-6a09-4a2c-aae1-7b493cbd0e6a" />
+
+<br/><br/>
+
+
+---
+
 ## Tech Stack
 
 ### Frontend _(primary focus)_
@@ -93,42 +142,5 @@ npm run dev
 ```
 
 ---
-
-## Screenshots
-
-_Register_
-
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/bd5ba0a5-c379-44bc-8767-fd19cab2303e" />
 <br/>
 
-_Login_
-
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/935b75df-690a-45b1-9348-939cb0898334" />
-<br/>
-
-_Home/Feed page_
-
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/43943841-2633-442b-84b1-81e9fb2d7f75" />
-<br/>
-
-_Create Post_
-
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3244f212-bd9c-4406-b0f3-0bcc8b54cf0d" />
-<br/>
-
-_Profile_
-
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/21a4b4a0-b078-4bbb-aacf-c23a8808ad61" />
-<br/>
-
-_Edit Profile_
-
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/cdd54767-6a09-4a2c-aae1-7b493cbd0e6a" />
-
-<br/>
-
-
-
-
-
----
