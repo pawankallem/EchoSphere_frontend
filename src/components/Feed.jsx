@@ -1,37 +1,27 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getPosts } from "../features/posts/postSlice";
 import PostCard from "./PostCard";
+import CreatePost from "./CreatePost";
 import PostSkeleton from "./PostSkeleton";
 
 export default function Feed() {
-  const [posts, setPosts] = useState(null);
+  const dispatch = useDispatch();
+  const { posts, loading } = useSelector((state) => state.posts);
 
   useEffect(() => {
-    setTimeout(() => {
-      setPosts([
-        {
-          id: 1,
-          user: "Rahul",
-          avatar: "https://i.pravatar.cc/150?img=12",
-          image: "https://picsum.photos/500/400?1",
-          caption: "Beautiful sunset 🌅",
-        },
-        {
-          id: 2,
-          user: "Amit",
-          avatar: "https://i.pravatar.cc/150?img=15",
-          image: "https://picsum.photos/500/400?2",
-          caption: "Travel diaries ✈️",
-        },
-      ]);
-    }, 1500);
-  }, []);
+    dispatch(getPosts());
+  }, [dispatch]);
 
   return (
     <div className="space-y-6">
-      {!posts
-        ? [1, 2, 3].map((_, i) => <PostSkeleton key={i} />)
+
+      <CreatePost />
+
+      {loading
+        ? [1, 2, 3].map((i) => <PostSkeleton key={i} />)
         : posts.map((post) => (
-            <PostCard key={post.id} post={post} />
+            <PostCard key={post._id} post={post} />
           ))}
     </div>
   );

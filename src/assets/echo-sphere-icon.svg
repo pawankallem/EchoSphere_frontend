@@ -1,0 +1,22 @@
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<svg viewBox="0 0 500 150" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Sphere Icon -->
+  <circle cx="75" cy="75" r="50" fill="#111827"></circle>
+
+  <!-- Echo Waves -->
+  <path d="M75 55 A20 20 0 0 1 95 75" stroke="#22D3EE" stroke-width="4" fill="none" stroke-linecap="round"></path>
+
+  <path d="M75 50 A25 25 0 0 1 100 75" stroke="#38BDF8" stroke-width="3" fill="none" stroke-linecap="round"></path>
+
+  <path d="M75 45 A30 30 0 0 1 105 75" stroke="#0EA5E9" stroke-width="2" fill="none" stroke-linecap="round"></path>
+
+  <!-- Center Dot -->
+  <circle cx="75" cy="75" r="6" fill="#22D3EE"></circle>
+
+  <!-- Brand Text -->
+  <text x="150" y="90" font-size="48" font-family="Arial, Helvetica, sans-serif" fill="#111827" font-weight="bold">
+    Echo Sphere
+  </text>
+
+</svg>
