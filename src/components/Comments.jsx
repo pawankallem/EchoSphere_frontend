@@ -45,7 +45,8 @@ export default function Comments({ postId }) {
             <img
               src={
                 c.user?.avatar ||
-                `https://ui-avatars.com/api/?name=${c.user?.username}`
+                // `https://ui-avatars.com/api/?name=${c.user?.username}`
+                'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'
               }
               className="w-8 h-8 rounded-full"
             />

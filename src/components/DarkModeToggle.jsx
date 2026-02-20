@@ -12,7 +12,7 @@ export default function DarkModeToggle() {
             }}
             className="px-3 py-1 rounded-lg border dark:border-gray-600 dark:text-white"
         >
-            {darkMode ? "🌙 Dark" : "☀️ Light"}
+            {!darkMode ? "🌙" : "☀️"}
         </button>
     );
 }
