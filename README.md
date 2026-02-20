@@ -1,55 +1,105 @@
-# EchoSphere_frontend
-A connected world where voices spread and conversations resonate.
+# EchoSphere
 
+> A social platform where voices spread and conversations resonate.
 
+EchoSphere is a full-stack social media web app inspired by the core experiences of Instagram and LinkedIn — sharing moments, engaging with content, and building a profile that represents you. Built as a personal project to explore modern frontend architecture and RESTful API design.
 
-- centralized axios request 
-- redux tool kit for create user, login
-- react router setup
-- protected & public routes and back & forward navigation restriction
-- backend init setup
-- register and login routes in backend along with jwt and password hashing
+🔗 **Live App:** [echosphere.vercel.app](https://echo-sphere-frontend.vercel.app/)
 
+---
 
-- atlas for mongo url
-- render for backend 
-- vercel for frontend
+## Features
 
+- **Auth** — Register & login with JWT-based session management
+- **Feed** — Create posts with images, like, save, and comment
+- **Comments** — Nested replies with delete support
+- **Profile** — View your posts, edit bio, avatar, location, and website
+- **Dark Mode** — System-wide theme toggle persisted via Redux
+- **Protected Routes** — Auth-guarded navigation with redirect logic
 
-- create post
-- fetch feed
-- like post
-- save post
+---
 
+## Tech Stack
 
-- comments
-- showing user details on comment
-- replay to comments
+### Frontend _(primary focus)_
+| Tool | Purpose |
+|---|---|
+| React 19 + Vite | UI & blazing-fast build tooling |
+| Redux Toolkit | Global state — auth, posts, comments, theme |
+| React Router v7 | Client-side routing & navigation guards |
+| Tailwind CSS | Utility-first styling with full dark mode |
+| Axios | Centralized HTTP client with request/response interceptors |
+| Lucide React | Consistent icon system |
+| React Hot Toast | Non-intrusive notifications |
 
-- profile page
-- edit profile
-- showing user profile details
+### Backend
+| Tool | Purpose |
+|---|---|
+| Flask (Python) | Lightweight REST API |
+| PyMongo | MongoDB driver |
+| PyJWT + bcrypt | Token auth & password hashing |
 
+### Infrastructure
+| Service | Role |
+|---|---|
+| MongoDB Atlas | Cloud-hosted database |
+| Render | Backend deployment |
+| Vercel | Frontend deployment (auto-deploy from GitHub `main`) |
 
-<!-- pending -->
+---
 
-- notifications on like & comments
+## Frontend Architecture
 
-- image upload for post or user creation or updates
-- load like, comments, saved updates realtime without refresh.
-- like & dislike && save & undo functionality implementation
-- create post should be icon on navbar and upon click show popup
-- hide search bar as of now
-- show animation effect for greeting user and it should deplay for 30 seconds only
-- in user profile for posts we are showing image only as of now but show the text also 
-- infinite feed scroll
-- infinite comment scroll and initially expand comments and show 3 latest comments.
-- show the icons of users who liked that specific post
-- post emoji icons highlight on actions
-- side bar for multiple options like [ home, search, create, notifications, profile, logout, dark mode, ]
-- set background image for login and create user account in mobile view.
+```
+src/
+├── app/              # Redux store config
+├── api/              # Axios instance + API modules
+├── features/         # Redux slices — auth, posts, comments, theme
+├── components/       # Reusable UI — Navbar, PostCard, Comments, etc.
+└── pages/            # Route views — Feed, Profile, Login, Register
+```
 
+Key patterns used:
+- **Centralized Axios instance** with auth interceptors and error handling
+- **Public & Protected Routes** with back/forward navigation restriction
+- **Slice-based state** — each feature owns its own reducer, actions, and async thunks
 
+---
 
+## Roadmap
 
+- [ ] MinIO for image & video storage
+- [ ] Notifications — likes, comments, follow requests
+- [ ] Real-time chat with online status (WebSocket)
+- [ ] Search with debouncing & throttling
+- [ ] Dashboard analytics
+- [ ] Smart feed suggestions — based on location, activity, mutual connections
 
+---
+
+## Getting Started
+
+```bash
+# Clone & install
+git clone https://github.com/your-username/echosphere-frontend
+cd echosphere-frontend
+npm install
+
+# Set environment variable
+echo "VITE_API_URL=http://localhost:5000" > .env
+
+# Start dev server
+npm run dev
+```
+
+---
+
+## Screenshots
+
+_Add screenshots here_
+
+---
+
+## License
+
+MIT

@@ -26,10 +26,33 @@ function App() {
   }, [darkMode]);
 
 
+  // useEffect(() => {
+  //   if (token)
+  //     dispatch(fetchUser());
+  // }, []);
+
   useEffect(() => {
-    if (token)
+    // ⚠️ TODO:
+    // There is a render dependency issue here.
+    // Currently this runs on a timer to keep the backend session active.
+    // In the future we should refactor this to avoid unnecessary re-renders
+    // and use a proper refresh/session strategy.
+
+    if (!token) return;
+
+    const fetchUserData = () => {
+      console.log("🚀 Pinged the backend to keep it awake… coffee delivered ☕");
       dispatch(fetchUser());
-  }, []);
+    };
+
+    // initial call
+    fetchUserData();
+
+    // call every 1 minute
+    const interval = setInterval(fetchUserData, 60000);
+
+    return () => clearInterval(interval); // cleanup on unmount
+  }, [token, dispatch]);
 
 
   return (
