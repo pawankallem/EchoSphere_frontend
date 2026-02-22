@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { Menu, X } from "lucide-react";
 import logo from "../assets/logo.svg";
+import NotificationBell from "./NotificationBell";
 
 export default function Navbar() {
   const dispatch = useDispatch();
@@ -63,6 +64,7 @@ export default function Navbar() {
             >
               Profile
             </button>
+            <NotificationBell />
 
             <DarkModeToggle />
 
@@ -100,6 +102,7 @@ export default function Navbar() {
               >
                 Profile
               </button>
+              <NotificationBell />
               <DarkModeToggle />
               {user && (
                 <button
@@ -109,11 +112,11 @@ export default function Navbar() {
                   Logout
                 </button>
               )}
-              <input
+              {/* <input
                 type="text"
                 placeholder="Search..."
                 className="px-3 py-2 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-white outline-none w-full"
-              />
+              /> */}
             </div>
           </div>
         )}
