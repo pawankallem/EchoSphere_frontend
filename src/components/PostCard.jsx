@@ -9,7 +9,7 @@ export default function PostCard({ post, onSelect }) {
   const [showComments, setShowComments] = useState(false);
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-xl shadow overflow-hidden" onClick={onSelect}>
+    <div className="bg-white dark:bg-gray-800 rounded-xl shadow overflow-hidden" >
 
       <div className="flex items-center gap-3 p-4">
         <img
@@ -31,7 +31,7 @@ export default function PostCard({ post, onSelect }) {
         </div>
       </div>
 
-      <div className="bg-white">
+      <div className="bg-white" onClick={onSelect}>
         <img
           src={post.image}
           className="w-full object-cover max-h-[500px]"
@@ -41,7 +41,7 @@ export default function PostCard({ post, onSelect }) {
 
       <div className="p-4 space-y-3">
 
-        <p className="dark:text-white">
+        <p className="dark:text-white" onClick={onSelect}>
           <span className="font-semibold mr-2">
             {post.author?.username}
           </span>
@@ -53,7 +53,11 @@ export default function PostCard({ post, onSelect }) {
             onClick={() => dispatch(toggleLike(post._id))}
             className="flex items-center gap-1 text-gray-600 dark:text-gray-300 hover:text-red-500"
           >
-            <Heart size={22} />
+            <Heart
+              size={22}
+              fill={post?.likesCount > 0 ? "red" : "none"}
+              color={post?.likesCount > 0 ? "red" : "currentColor"}
+            />
             {post.likesCount}
           </button>
 
@@ -69,7 +73,10 @@ export default function PostCard({ post, onSelect }) {
             onClick={() => dispatch(toggleSave(post._id))}
             className="flex items-center gap-1 hover:text-blue-500 text-gray-600 dark:text-gray-300"
           >
-            <Bookmark size={22} />
+            <Bookmark
+              size={22}
+              fill={post?.savedCount > 0 ? "currentColor" : "none"}
+            />
             {post.savedCount}
           </button>
         </div>
