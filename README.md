@@ -15,6 +15,7 @@ EchoSphere is a full-stack social media web app inspired by the core experiences
 - **Comments** — Nested replies with delete support
 - **Profile** — View your posts, edit bio, avatar, location, and website
 - **Dark Mode** — System-wide theme toggle persisted via Redux
+- **Notifications** — Send notifications on likes and comments 
 - **Protected Routes** — Auth-guarded navigation with redirect logic
 
 ---
@@ -52,7 +53,7 @@ EchoSphere is a full-stack social media web app inspired by the core experiences
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4bd96fbf-6c90-4236-a9d8-04b07011bf6c" />
 
 <br/><br/>
-### Single Selectioin of Post
+### Single Post View
 <br/>
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/deeec5a1-93da-40d9-8f8b-5e2a18fb7e9e" />
 
@@ -115,7 +116,7 @@ Key patterns used:
 ## Roadmap
 
 - [ ] MinIO for image & video storage
-- [ ] Notifications — likes, comments, follow requests
+- [ ] Notifications — follows, mentions, and system alerts
 - [ ] Real-time chat with online status (WebSocket)
 - [ ] Search with debouncing & throttling
 - [ ] Dashboard analytics
@@ -140,6 +141,6 @@ npm run dev
 
 ---
 
-> 🚧 **Active Development**  
-> EchoSphere is continuously evolving. New features and improvements are currently in progress.
+> 🚧 Active Development
+> EchoSphere is actively evolving with new features, performance improvements, and UI refinements underway.
 
