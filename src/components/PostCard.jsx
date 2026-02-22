@@ -56,8 +56,8 @@ export default function PostCard({ post, onSelect }) {
           >
             <Heart
               size={22}
-              fill={post?.likesCount > 0 && user?.id === post?.author?.id ? "red" : "none"}
-              color={post?.likesCount > 0 && user?.id === post?.author?.id ? "red" : "currentColor"}
+              fill={post?.likesCount > 0 && (post?.likedBy?.includes(user?.id)) ? "red" : "none"}
+              color={post?.likesCount > 0 && post?.likedBy?.includes(user?.id) ? "red" : "currentColor"}
             />
             {post.likesCount}
           </button>
@@ -76,7 +76,7 @@ export default function PostCard({ post, onSelect }) {
           >
             <Bookmark
               size={22}
-              fill={post?.savedCount > 0 && user?.id === post?.author?.id ? "currentColor" : "none"}
+              fill={post?.savedCount > 0 && post?.savedByUsers?.includes(user?.id) ? "currentColor" : "none"}
             />
             {post.savedCount}
           </button>

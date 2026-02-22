@@ -112,11 +112,11 @@ export default function Navbar() {
                   Logout
                 </button>
               )}
-              <input
+              {/* <input
                 type="text"
                 placeholder="Search..."
                 className="px-3 py-2 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-white outline-none w-full"
-              />
+              /> */}
             </div>
           </div>
         )}

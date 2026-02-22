@@ -177,7 +177,7 @@ const CreateAccount = () => {
                     </form>
 
                     <p className="text-sm text-gray-500 text-center mt-6">
-                        Already have an account? <Link to="/login"> Login</Link>
+                        Already have an account? <Link to="/login" className="text-blue-800 underline font-bold"> Login</Link>
                     </p>
                 </div>
             </div>
