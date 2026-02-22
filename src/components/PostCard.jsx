@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toggleLike, toggleSave } from "../features/posts/postSlice";
 import { Heart, Bookmark, MessageCircle } from "lucide-react";
 import Comments from "./Comments";
 
 export default function PostCard({ post, onSelect }) {
   const dispatch = useDispatch();
+  const { user } = useSelector((s) => s.auth);
   const [showComments, setShowComments] = useState(false);
 
   return (
@@ -55,8 +56,8 @@ export default function PostCard({ post, onSelect }) {
           >
             <Heart
               size={22}
-              fill={post?.likesCount > 0 ? "red" : "none"}
-              color={post?.likesCount > 0 ? "red" : "currentColor"}
+              fill={post?.likesCount > 0 && user?.id === post?.author?.id ? "red" : "none"}
+              color={post?.likesCount > 0 && user?.id === post?.author?.id ? "red" : "currentColor"}
             />
             {post.likesCount}
           </button>
@@ -75,7 +76,7 @@ export default function PostCard({ post, onSelect }) {
           >
             <Bookmark
               size={22}
-              fill={post?.savedCount > 0 ? "currentColor" : "none"}
+              fill={post?.savedCount > 0 && user?.id === post?.author?.id ? "currentColor" : "none"}
             />
             {post.savedCount}
           </button>
