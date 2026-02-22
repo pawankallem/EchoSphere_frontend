@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { fetchPosts, createPost, likePost, savePost } from "../../api/postApi";
+import { createComment, removeComment } from "../comments/commentSlice";
 
 const initialState = {
   posts: [],
@@ -61,6 +62,14 @@ const postSlice = createSlice({
           post.savedBy = !post.savedBy;
           post.savedCount += post.savedBy ? 1 : -1;
         }
+      })
+      .addCase(createComment.fulfilled, (state, action) => {
+        const post = state.posts.find((p) => p._id === action.payload);
+        if (post) post.commentsCount += 1;
+      })
+      .addCase(removeComment.fulfilled, (state, action) => {
+        const post = state.posts.find((p) => p._id === action.payload);
+        if (post && post.commentsCount > 0) post.commentsCount -= 1;
       });
   },
 });

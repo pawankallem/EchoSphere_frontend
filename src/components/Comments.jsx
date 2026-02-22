@@ -65,7 +65,7 @@ export default function Comments({ postId }) {
                 {c.user?.id === user?.id && (
                   <button
                     onClick={() => {
-                      dispatch(removeComment(c._id));
+                      dispatch(removeComment({ commentId: c._id, postId }));
                       toast.success("Deleted");
                     }}
                   >
