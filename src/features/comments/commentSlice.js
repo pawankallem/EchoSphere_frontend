@@ -1,9 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import {
-  fetchComments,
-  addComment,
-  deleteComment,
-} from "../../api/commentApi";
+import { fetchComments, addComment, deleteComment } from "../../api/commentApi";
 
 const initialState = {
   commentsByPost: {},
@@ -20,17 +16,23 @@ export const getComments = createAsyncThunk(
 
 export const createComment = createAsyncThunk(
   "comments/createComment",
-  async (data) => {
-    await addComment(data);
-    return data;
+  async ({ post, text, parentComment }, { dispatch }) => {
+    await addComment({ post, text, parentComment });
+
+    dispatch(getComments(post));
+
+    return post;
   }
 );
 
 export const removeComment = createAsyncThunk(
   "comments/removeComment",
-  async (commentId) => {
+  async ({ commentId, postId }, { dispatch }) => {
     await deleteComment(commentId);
-    return commentId;
+
+    dispatch(getComments(postId));
+
+    return postId;
   }
 );
 
@@ -44,8 +46,7 @@ const commentSlice = createSlice({
       })
       .addCase(getComments.fulfilled, (state, action) => {
         state.loading = false;
-        state.commentsByPost[action.payload.postId] =
-          action.payload.comments;
+        state.commentsByPost[action.payload.postId] = action.payload.comments;
       });
   },
 });

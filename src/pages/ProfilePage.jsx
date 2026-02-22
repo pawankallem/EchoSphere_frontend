@@ -3,11 +3,13 @@ import { Grid } from "lucide-react";
 import ProfileHeader from "../components/ProfileHeader";
 import PostGrid from "../components/PostProfileGrid";
 import { fetchProfile } from "../api/profileApi";
+import PostModal from "../components/PostModal";
 
 export default function ProfilePage() {
   const [user, setUser] = useState(null);
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [selectedPost, setSelectedPost] = useState(null);
 
   const loadProfile = () => {
     fetchProfile()
@@ -17,6 +19,13 @@ export default function ProfilePage() {
       })
       .catch((err) => console.error(err))
       .finally(() => setLoading(false));
+  };
+
+  const handleSelectPost = (post) => {
+    setSelectedPost({
+      ...post,
+      author: { ...user }
+    });
   };
 
   useEffect(() => {
@@ -48,9 +57,17 @@ export default function ProfilePage() {
         </div>
 
         <div className="mt-2 bg-white dark:bg-gray-800 rounded-xl overflow-hidden">
-          <PostGrid posts={posts} />
+          <PostGrid posts={posts} onSelect={handleSelectPost} />
         </div>
       </div>
+
+      {selectedPost && (
+        <PostModal
+          post={selectedPost}
+          onClose={() => setSelectedPost(null)}
+        />
+      )}
+
     </div>
   );
 }
