@@ -4,12 +4,12 @@ import { toggleLike, toggleSave } from "../features/posts/postSlice";
 import { Heart, Bookmark, MessageCircle } from "lucide-react";
 import Comments from "./Comments";
 
-export default function PostCard({ post }) {
+export default function PostCard({ post, onSelect }) {
   const dispatch = useDispatch();
   const [showComments, setShowComments] = useState(false);
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-xl shadow overflow-hidden">
+    <div className="bg-white dark:bg-gray-800 rounded-xl shadow overflow-hidden" onClick={onSelect}>
 
       <div className="flex items-center gap-3 p-4">
         <img

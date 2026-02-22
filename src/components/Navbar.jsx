@@ -43,13 +43,13 @@ export default function Navbar() {
 
           <div className="hidden md:flex items-center gap-4">
             {/* Future Search Bar Placeholder */}
-            <div className="hidden md:block">
+            {/* <div className="hidden md:block">
               <input
                 type="text"
                 placeholder="Search..."
                 className="px-3 py-1 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-white outline-none w-64"
               />
-            </div>
+            </div> */}
 
             {user && (
               <span className="hidden md:block dark:text-white font-medium">
